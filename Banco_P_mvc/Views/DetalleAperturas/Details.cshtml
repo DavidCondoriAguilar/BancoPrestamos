@@ -1,0 +1,42 @@
+﻿@model Banco_P_mvc.Models.DetalleApertura
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>DetalleApertura</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Cliente.Nom_Cli)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cliente.Nom_Cli)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cuenta.Ruc_Cli)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cuenta.Ruc_Cli)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fec_Ape)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fec_Ape)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id_Ape }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

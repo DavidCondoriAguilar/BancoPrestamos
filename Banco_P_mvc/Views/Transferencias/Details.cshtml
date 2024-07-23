@@ -1,0 +1,58 @@
+﻿@model Banco_P_mvc.Models.Transferencia
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Transferencia</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Cuenta.Ruc_Cli)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cuenta.Ruc_Cli)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Mon_Tra)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mon_Tra)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cue_Tra)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cue_Tra)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fec_Tra)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fec_Tra)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tra_Int)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tra_Int)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Cod_Tra }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

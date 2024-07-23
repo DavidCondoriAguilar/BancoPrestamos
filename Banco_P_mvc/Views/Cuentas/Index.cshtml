@@ -1,0 +1,96 @@
+﻿@model IEnumerable<Banco_P_mvc.Models.Cuenta>
+
+@{
+    ViewBag.Title = "Índice de Cuentas";
+}
+
+<div class="container mt-5">
+    <h2 class="mb-4">Índice de Cuentas</h2>
+
+    <p>
+        <a href="@Url.Action("Create")" class="btn btn-success mb-3"><i class="bi bi-plus-circle"></i> Crear Nueva Cuenta</a>
+    </p>
+
+    <table class="table table-bordered table-hover">
+        <thead class="table-dark">
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.First().Sucursal.Nom_Suc)</th>
+                <th>@Html.DisplayNameFor(model => model.First().Sal_Cue)</th>
+                <th>@Html.DisplayNameFor(model => model.First().Ruc_Cli)</th>
+                <th>@Html.DisplayNameFor(model => model.First().Mon_Ape)</th>
+                <th>@Html.DisplayNameFor(model => model.First().Cue_aho)</th>
+                <th>@Html.DisplayNameFor(model => model.First().Cue_Cor)</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.Sucursal.Nom_Suc)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Sal_Cue)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Ruc_Cli)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Mon_Ape)</td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="cueSelection_@item.Num_Cue" id="cueAho_@item.Num_Cue" value="@item.Cue_aho" @if (item.Cue_aho == SelectedCue) { <text> checked</text> } />
+                            <label class="form-check-label" for="cueAho_@item.Num_Cue">
+                                @item.Cue_aho
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="cueSelection_@item.Num_Cue" id="cueCor_@item.Num_Cue" value="@item.Cue_Cor" @if (item.Cue_Cor == SelectedCue) { <text> checked</text> } />
+                            <label class="form-check-label" for="cueCor_@item.Num_Cue">
+                                @item.Cue_Cor
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <a href="@Url.Action("Edit", new { id = item.Num_Cue })" class="btn btn-warning btn-sm"><i class="bi bi-pencil-square"></i> Editar</a>
+                        <a href="@Url.Action("Details", new { id = item.Num_Cue })" class="btn btn-info btn-sm"><i class="bi bi-info-circle"></i> Detalles</a>
+                        <a href="@Url.Action("Delete", new { id = item.Num_Cue })" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i> Eliminar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<style>
+    /* Estilos personalizados para la tabla y los radio buttons */
+    .table {
+        border: 1px solid #dee2e6;
+    }
+
+    .table-bordered {
+        border: 1px solid #dee2e6;
+    }
+
+    .table-hover tbody tr:hover {
+        background-color: #f8f9fa;
+    }
+
+    .form-check-input:checked {
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+
+    .form-check-label {
+        margin-left: 0.5rem;
+    }
+
+    .form-check-input {
+        margin-top: 0.3rem;
+    }
+
+    .btn {
+        font-size: 0.875rem;
+        margin-right: 0.5rem;
+    }
+
+        .btn i {
+            margin-right: 0.3rem;
+        }
+</style>

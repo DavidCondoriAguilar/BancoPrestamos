@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Banco_P_mvc.Models.Sucursal>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nom_Suc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Afo_Suc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Dis_Suc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pro_Suc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Dep_Suc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Dir_Suc)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nom_Suc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Afo_Suc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Dis_Suc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pro_Suc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Dep_Suc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Dir_Suc)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Cod_Suc }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Cod_Suc }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Cod_Suc })
+        </td>
+    </tr>
+}
+
+</table>

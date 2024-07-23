@@ -1,0 +1,60 @@
+﻿@model Banco_P_mvc.Models.Cliente
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Detalles del Cliente</h2>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <h4>Cliente</h4>
+            <hr />
+            <dl class="row">
+                <dt class="col-sm-3">DNI:</dt>
+                <dd class="col-sm-9">@Model.Dni_Cli</dd>
+
+                <dt class="col-sm-3">Nombre:</dt>
+                <dd class="col-sm-9">@Model.Nom_Cli</dd>
+
+                <dt class="col-sm-3">Apellido Paterno:</dt>
+                <dd class="col-sm-9">@Model.Ape_Pat_Cli</dd>
+
+                <dt class="col-sm-3">Apellido Materno:</dt>
+                <dd class="col-sm-9">@Model.Ape_Mat_Cli</dd>
+
+                <dt class="col-sm-3">Teléfono:</dt>
+                <dd class="col-sm-9">@Model.Tel_Cli</dd>
+
+                <dt class="col-sm-3">Correo:</dt>
+                <dd class="col-sm-9">@Model.Cor_cli</dd>
+
+                <dt class="col-sm-3">Dirección:</dt>
+                <dd class="col-sm-9">@Model.Dir_cli</dd>
+
+                <dt class="col-sm-3">Distrito:</dt>
+                <dd class="col-sm-9">@Model.Dis_cli</dd>
+
+                <dt class="col-sm-3">Fecha de Ingreso:</dt>
+                <dd class="col-sm-9">@Model.Fec_Ing_Cli.ToShortDateString()</dd>
+
+                <dt class="col-sm-3">Fecha de Nacimiento:</dt>
+                <dd class="col-sm-9">@Model.Fec_Nac_Cli.ToShortDateString()</dd>
+
+                <dt class="col-sm-3">Empleado:</dt>
+                <dd class="col-sm-9">@Model.Cod_Emp</dd>
+            </dl>
+
+            <div class="text-center mt-3">
+                @Html.ActionLink(" Editar", "Edit", new { id = Model.Dni_Cli }, new { @class = "btn btn-warning btn-sm bi bi-pencil-square" })
+                @Html.ActionLink(" Eliminar", "Delete", new { id = Model.Dni_Cli }, new { @class = "btn btn-danger btn-sm bi bi-trash" })
+                @Html.ActionLink(" Volver a la Lista", "Index", new { @class = "font-weight-bold btn btn-secondary btn-sm bi bi-arrow-left" })
+            </div>
+        </div>
+    </div>
+    
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }

@@ -1,0 +1,100 @@
+﻿@model Banco_P_mvc.Models.Cliente
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <h4>Cliente</h4>
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Dni_Cli, htmlAttributes: new { @class = "form-label" })
+                    @Html.EditorFor(model => model.Dni_Cli, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Dni_Cli, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Nom_Cli, htmlAttributes: new { @class = "form-label" })
+                    @Html.EditorFor(model => model.Nom_Cli, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Nom_Cli, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Ape_Pat_Cli, htmlAttributes: new { @class = "form-label" })
+                    @Html.EditorFor(model => model.Ape_Pat_Cli, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Ape_Pat_Cli, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Ape_Mat_Cli, htmlAttributes: new { @class = "form-label" })
+                    @Html.EditorFor(model => model.Ape_Mat_Cli, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Ape_Mat_Cli, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Tel_Cli, htmlAttributes: new { @class = "form-label" })
+                    @Html.EditorFor(model => model.Tel_Cli, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Tel_Cli, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Cor_cli, htmlAttributes: new { @class = "form-label" })
+                    @Html.EditorFor(model => model.Cor_cli, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Cor_cli, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Dir_cli, htmlAttributes: new { @class = "form-label" })
+                    @Html.EditorFor(model => model.Dir_cli, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Dir_cli, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Dis_cli, htmlAttributes: new { @class = "form-label" })
+                    @Html.EditorFor(model => model.Dis_cli, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Dis_cli, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Fec_Ing_Cli, htmlAttributes: new { @class = "form-label" })
+                    @Html.EditorFor(model => model.Fec_Ing_Cli, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Fec_Ing_Cli, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Fec_Nac_Cli, htmlAttributes: new { @class = "form-label" })
+                    @Html.EditorFor(model => model.Fec_Nac_Cli, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Fec_Nac_Cli, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Cod_Emp, "Cod_Emp", htmlAttributes: new { @class = "form-label" })
+                    @Html.DropDownList("Cod_Emp", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Cod_Emp, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group text-center">
+                    <button type="submit" class="btn btn-primary btn-sm"><i class="bi bi-save"></i> Create</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<div class="text-center mt-3">
+    @Html.ActionLink("Back to List", "Index", new { @class = "btn btn-secondary btn-sm bi bi-arrow-left" })
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

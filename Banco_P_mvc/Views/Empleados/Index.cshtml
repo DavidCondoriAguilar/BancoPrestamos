@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Banco_P_mvc.Models.Empleado>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Lista de Empleados</h2>
+
+<p>
+    @Html.ActionLink(" Crear Nuevo", "Create", null, new { @class = "btn btn-primary btn-sm bi bi-plus" })
+</p>
+<div class="table-responsive">
+    <table class="table table-striped table-bordered table-sm">
+        <thead class="thead-dark">
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.Sucursal.Nom_Suc)</th>
+                <th>@Html.DisplayNameFor(model => model.DNI_Emp)</th>
+                <th>@Html.DisplayNameFor(model => model.Nom_Emp)</th>
+                <th>@Html.DisplayNameFor(model => model.Tel_Emp)</th>
+                <th>@Html.DisplayNameFor(model => model.Cor_Emp)</th>
+                <th>@Html.DisplayNameFor(model => model.Dir_Emp)</th>
+                <th>@Html.DisplayNameFor(model => model.Dis_Emp)</th>
+                <th>@Html.DisplayNameFor(model => model.Fec_ing_Emp)</th>
+                <th>@Html.DisplayNameFor(model => model.Car_Emp)</th>
+                <th>@Html.DisplayNameFor(model => model.UsuarioEmpleado)</th>
+                <th>@Html.DisplayNameFor(model => model.ClaveEmpleado)</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.Sucursal.Nom_Suc)</td>
+                    <td>@Html.DisplayFor(modelItem => item.DNI_Emp)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Nom_Emp)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Tel_Emp)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Cor_Emp)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Dir_Emp)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Dis_Emp)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Fec_ing_Emp)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Car_Emp)</td>
+                    <td>@Html.DisplayFor(modelItem => item.UsuarioEmpleado)</td>
+                    <td>@Html.DisplayFor(modelItem => item.ClaveEmpleado)</td>
+                    <td>
+                        @Html.ActionLink(" Editar", "Edit", new { id = item.Cod_Emp }, new { @class = "btn btn-secondary btn-sm bi bi-pencil-square" })
+                        @Html.ActionLink(" Detalles", "Details", new { id = item.Cod_Emp }, new { @class = "btn btn-info btn-sm bi bi-info-circle" })
+                        @Html.ActionLink(" Eliminar", "Delete", new { id = item.Cod_Emp }, new { @class = "btn btn-danger btn-sm bi bi-trash" })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

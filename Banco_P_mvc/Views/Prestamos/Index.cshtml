@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Banco_P_mvc.Models.Prestamo>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Sucursal.Nom_Suc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Mon_Pre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pre_Est)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Com_Deu)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sucursal.Nom_Suc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mon_Pre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pre_Est)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Com_Deu)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Cod_Pre }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Cod_Pre }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Cod_Pre })
+        </td>
+    </tr>
+}
+
+</table>

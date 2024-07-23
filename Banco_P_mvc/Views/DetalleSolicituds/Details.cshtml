@@ -1,0 +1,42 @@
+﻿@model Banco_P_mvc.Models.DetalleSolicitud
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>DetalleSolicitud</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Cliente.Nom_Cli)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cliente.Nom_Cli)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Prestamo.Cod_Suc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Prestamo.Cod_Suc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fec_Sol)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fec_Sol)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id_Solicitud }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

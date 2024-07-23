@@ -1,0 +1,56 @@
+﻿@model Banco_P_mvc.Models.Prestamo
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Prestamo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Sucursal.Nom_Suc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sucursal.Nom_Suc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Mon_Pre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mon_Pre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pre_Est)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pre_Est)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Com_Deu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Com_Deu)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

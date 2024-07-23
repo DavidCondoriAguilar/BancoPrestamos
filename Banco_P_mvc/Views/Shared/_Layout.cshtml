@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Banco Nacion</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    @*icons*@
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <style>
+        .custom-table th, .custom-table td {
+            padding: 0.25rem;
+            vertical-align: middle;
+        }
+
+        .btn-sm {
+            padding: 0.25rem 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
+        <div class="container">
+            @Html.ActionLink("Banco Nacion", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between" id="navbarNavDropdown">
+                <ul class="navbar-nav flex-grow-1">
+                    <li class="nav-item">@Html.ActionLink("Inicio", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li class="nav-item">@Html.ActionLink("Acerca de", "About", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button">
+                            Más
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li>@Html.ActionLink("Empleados", "Index", "Empleados", new { area = "" }, new { @class = "dropdown-item" })</li>
+                            <li>@Html.ActionLink("Clientes", "Index", "Clientes", new { area = "" }, new { @class = "dropdown-item" })</li>
+                            <li>@Html.ActionLink("Cuentas", "Index", "Cuentas", new { area = "" }, new { @class = "dropdown-item" })</li>
+                            <li>@Html.ActionLink("Pagos", "Index", "Pagos", new { area = "" }, new { @class = "dropdown-item" })</li>
+                            <li>@Html.ActionLink("Prestamo", "Index", "Prestamos", new { area = "" }, new { @class = "dropdown-item" })</li>
+                            <li>@Html.ActionLink("Seguros", "Index", "Seguros", new { area = "" }, new { @class = "dropdown-item" })</li>
+                            <li>@Html.ActionLink("Sucursales", "Index", "Sucursales", new { area = "" }, new { @class = "dropdown-item" })</li>
+                            <li>@Html.ActionLink("Transferencias", "Index", "Transferencias", new { area = "" }, new { @class = "dropdown-item" })</li>
+
+                            <li><hr class="dropdown-divider"></li>
+                            <li>@Html.ActionLink("Detalle Adqui", "Index", "DetalleAdquisicions", new { area = "" }, new { @class = "dropdown-item" })</li>
+                            <li>@Html.ActionLink("Detalle Apertura", "Index", "DetalleAperturas", new { area = "" }, new { @class = "dropdown-item" })</li>
+                            <li>@Html.ActionLink("Detalle Solicituds", "Index", "DetalleSolicituds", new { area = "" }, new { @class = "dropdown-item" })</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Mi aplicación ASP.NET</p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var dropdownToggle = document.getElementById('navbarDropdown');
+            dropdownToggle.addEventListener('click', function (e) {
+                e.preventDefault();
+                var dropdownMenu = this.nextElementSibling;
+                dropdownMenu.classList.toggle('show');
+            });
+
+            document.addEventListener('click', function (e) {
+                if (!dropdownToggle.contains(e.target)) {
+                    var dropdownMenu = dropdownToggle.nextElementSibling;
+                    if (dropdownMenu.classList.contains('show')) {
+                        dropdownMenu.classList.remove('show');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

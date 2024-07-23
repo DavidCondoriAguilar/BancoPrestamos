@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Banco_P_mvc.Models.Seguro>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Cos_Men_Seg)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fec_Nac)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Num_Tar)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Seg_Onc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Seg_Tar)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cos_Men_Seg)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fec_Nac)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Num_Tar)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Seg_Onc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Seg_Tar)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Cod_Seg }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Cod_Seg }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Cod_Seg })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,116 @@
+﻿@model Banco_P_mvc.Models.Empleado
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Detalles del Empleado</h2>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h4>Empleado</h4>
+            <hr />
+            <dl class="row">
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.Sucursal.Nom_Suc)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.Sucursal.Nom_Suc)
+                </dd>
+
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.DNI_Emp)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.DNI_Emp)
+                </dd>
+
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.Nom_Emp)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.Nom_Emp)
+                </dd>
+
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.Ape_Pat_Emp)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.Ape_Pat_Emp)
+                </dd>
+
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.Ape_Mat_Emp)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.Ape_Mat_Emp)
+                </dd>
+            </dl>
+        </div>
+        <div class="col-md-6">
+            <dl class="row mt-md-5 mt-0">
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.Tel_Emp)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.Tel_Emp)
+                </dd>
+
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.Cor_Emp)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.Cor_Emp)
+                </dd>
+
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.Dir_Emp)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.Dir_Emp)
+                </dd>
+
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.Dis_Emp)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.Dis_Emp)
+                </dd>
+
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.Fec_ing_Emp)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.Fec_ing_Emp)
+                </dd>
+
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.Car_Emp)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.Car_Emp)
+                </dd>
+
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.UsuarioEmpleado)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.UsuarioEmpleado)
+                </dd>
+
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.ClaveEmpleado)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.ClaveEmpleado)
+                </dd>
+            </dl>
+        </div>
+    </div>
+</div>
+
+<p class="mt-4">
+    @Html.ActionLink("Editar", "Edit", new { id = Model.Cod_Emp }, new { @class = "btn btn-warning" }) |
+    @Html.ActionLink("Volver a la lista", "Index", null, new { @class = "btn btn-secondary" })
+</p>

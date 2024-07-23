@@ -1,0 +1,66 @@
+﻿@model Banco_P_mvc.Models.Cuenta
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Cuenta</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Sucursal.Nom_Suc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sucursal.Nom_Suc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sal_Cue)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sal_Cue)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ruc_Cli)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ruc_Cli)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Mon_Ape)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mon_Ape)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cue_aho)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cue_aho)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cue_Cor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cue_Cor)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Num_Cue }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

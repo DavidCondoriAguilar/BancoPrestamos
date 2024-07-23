@@ -1,0 +1,50 @@
+﻿@model Banco_P_mvc.Models.Prestamo
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Prestamo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Sucursal.Nom_Suc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sucursal.Nom_Suc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Mon_Pre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mon_Pre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pre_Est)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pre_Est)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Com_Deu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Com_Deu)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Cod_Pre }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

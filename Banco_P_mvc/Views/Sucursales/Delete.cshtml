@@ -1,0 +1,72 @@
+﻿@model Banco_P_mvc.Models.Sucursal
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Sucursal</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nom_Suc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nom_Suc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Afo_Suc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Afo_Suc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Dis_Suc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dis_Suc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pro_Suc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pro_Suc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Dep_Suc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dep_Suc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Dir_Suc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dir_Suc)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
