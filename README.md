@@ -30,7 +30,8 @@ Detalles de una cuenta existente
 1. Clonar el Repositorio
 bash
 
-git clone https://github.com/tu-usuario/gestion-cuentas-bancarias.git
+[git clone https://github.com/tu-usuario/gestion-cuentas-bancarias.git](https://github.com/DavidCondoriAguilar/BancoPrestamos.git)
+
 2. Configurar el Entorno
 Asegúrate de tener Visual Studio y .NET SDK instalados. Abre el proyecto en Visual Studio.
 
