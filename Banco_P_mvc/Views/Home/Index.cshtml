@@ -3,33 +3,121 @@
 }
 
 <main class="container mt-5">
-    <section class="row mb-5" aria-labelledby="bankTitle">
-        <h1 id="bankTitle" class="col-12 text-center mb-4 display-3">Bienvenido al Banco Nacional</h1>
-        <p class="lead text-center">El Banco Nacional ofrece soluciones financieras completas para satisfacer todas tus necesidades bancarias. Explora nuestras ofertas y servicios para encontrar lo que necesitas.</p>
-        <p class="text-center">
-            <a href="/services" class="btn btn-primary btn-lg"><i class="bi bi-briefcase"></i> Nuestros Servicios &raquo;</a>
+    <section class="row mb-5 text-center">
+        <h1 id="bankTitle" class="col-12 mb-4 display-3">Bienvenido al Banco Nacional</h1>
+        <p class="lead">El Banco Nacional ofrece soluciones financieras completas para satisfacer todas tus necesidades bancarias. Explora nuestras ofertas y servicios para encontrar lo que necesitas.</p>
+        <p>
+            <a href="/services" class="btn btn-primary btn-lg">
+                <i class="bi bi-briefcase"></i> Nuestros Servicios &raquo;
+            </a>
         </p>
     </section>
 
+    <div class="row mb-4">
+        <!-- Total Clientes -->
+        <div class="col-md-4 mb-4 pe-auto">
+            <div class="card bg-primary text-white shadow-sm pe-auto" onclick="location.href='@Url.Action("Index", "Clientes")'">
+                <div class="card-body text-center">
+                    <i class="bi bi-person-fill display-4 mb-3"></i>
+                    <h5 class="card-title">Clientes</h5>
+                    <p class="card-text fs-4">
+                        <strong>@ViewBag.TotalClientes</strong>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Total Cuentas -->
+        <div class="col-md-4 mb-4 pe-auto">
+            <div class="card bg-success text-white shadow-sm pe-auto" onclick="location.href='@Url.Action("Index", "Cuentas")'">
+                <div class="card-body text-center">
+                    <i class="bi bi-wallet2 display-4 mb-3"></i>
+                    <h5 class="card-title">Cuentas</h5>
+                    <p class="card-text fs-4">
+                        <strong>@ViewBag.TotalCuentas</strong>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Total Empleados -->
+        <div class="col-md-4 mb-4 pe-auto">
+            <div class="card bg-info text-white shadow-sm pe-auto" onclick="location.href='@Url.Action("Index", "Empleados")'">
+                <div class="card-body text-center">
+                    <i class="bi bi-person-badge display-4 mb-3"></i>
+                    <h5 class="card-title">Empleados</h5>
+                    <p class="card-text fs-4">
+                        <strong>@ViewBag.TotalEmpleados</strong>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Total Préstamos -->
+        <div class="col-md-4 mb-4 pe-auto">
+            <div class="card bg-warning text-dark shadow-sm pe-auto" onclick="location.href='@Url.Action("Index", "Prestamos")'">
+                <div class="card-body text-center">
+                    <i class="bi bi-credit-card display-4 mb-3"></i>
+                    <h5 class="card-title">Préstamos</h5>
+                    <p class="card-text fs-4">
+                        <strong>@ViewBag.TotalPrestamos</strong>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Total Sucursales -->
+        <div class="col-md-4 mb-4 pe-auto">
+            <div class="card bg-danger text-white shadow-sm pe-auto" onclick="location.href='@Url.Action("Index", "Sucursales")'">
+                <div class="card-body text-center">
+                    <i class="bi bi-geo-alt display-4 mb-3"></i>
+                    <h5 class="card-title">Sucursales</h5>
+                    <p class="card-text fs-4">
+                        <strong>@ViewBag.TotalSucursales</strong>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Total Transferencias -->
+        <div class="col-md-4 mb-4 pe-auto">
+            <div class="card bg-secondary text-white shadow-sm " onclick="location.href='@Url.Action("Index", "Transferencias")'">
+                <div class="card-body text-center">
+                    <i class="bi bi-arrow-right-circle display-4 mb-3"></i>
+                    <h5 class="card-title">Transferencias</h5>
+                    <p class="card-text fs-4">
+                        <strong>@ViewBag.TotalTransferencias</strong>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="row">
         <section class="col-md-4 mb-4" aria-labelledby="gettingStartedTitle">
-            <h2 id="gettingStartedTitle" class="h4 mb-3"><i class="bi bi-lightbulb"></i> Comenzando</h2>
-            <p>
-                Aprende a utilizar todas las funcionalidades que el Banco Nacional ofrece. Desde la apertura de cuentas hasta la gestión de préstamos, estamos aquí para ayudarte en cada paso.
-            </p>
-            <p><a class="btn btn-outline-dark" href="/getting-started"><i class="bi bi-info-circle"></i> Aprende más &raquo;</a></p>
+            <div class="bg-light p-3 rounded shadow-sm">
+                <h2 id="gettingStartedTitle" class="h4 mb-3"><i class="bi bi-lightbulb"></i> Comenzando</h2>
+                <p>
+                    Aprende a utilizar todas las funcionalidades que el Banco Nacional ofrece. Desde la apertura de cuentas hasta la gestión de préstamos, estamos aquí para ayudarte en cada paso.
+                </p>
+                <p><a class="btn btn-outline-dark" href="/getting-started"><i class="bi bi-info-circle"></i> Aprende más &raquo;</a></p>
+            </div>
         </section>
 
         <section class="col-md-4 mb-4" aria-labelledby="librariesTitle">
-            <h2 id="librariesTitle" class="h4 mb-3"><i class="bi bi-bookmarks"></i> Recursos y Herramientas</h2>
-            <p>Accede a nuestras herramientas en línea y recursos para facilitar la gestión de tus finanzas. Utiliza nuestras aplicaciones móviles y el portal en línea para un acceso conveniente.</p>
-            <p><a class="btn btn-outline-dark" href="/resources"><i class="bi bi-cloud-download"></i> Descarga Recursos &raquo;</a></p>
+            <div class="bg-light p-3 rounded shadow-sm">
+                <h2 id="librariesTitle" class="h4 mb-3"><i class="bi bi-bookmarks"></i> Recursos y Herramientas</h2>
+                <p>Accede a nuestras herramientas en línea y recursos para facilitar la gestión de tus finanzas. Utiliza nuestras aplicaciones móviles y el portal en línea para un acceso conveniente.</p>
+                <p><a class="btn btn-outline-dark" href="/resources"><i class="bi bi-cloud-download"></i> Descarga Recursos &raquo;</a></p>
+            </div>
         </section>
 
         <section class="col-md-4 mb-4" aria-labelledby="hostingTitle">
-            <h2 id="hostingTitle" class="h4 mb-3"><i class="bi bi-house-door"></i> Sede y Contacto</h2>
-            <p>Encuentra nuestras sucursales y puntos de atención en todo el país. Estamos disponibles para asistirte en nuestras oficinas o a través de nuestra línea de atención al cliente.</p>
-            <p><a class="btn btn-outline-dark" href="/contact"><i class="bi bi-telephone"></i> Contáctanos &raquo;</a></p>
+            <div class="bg-light p-3 rounded shadow-sm">
+                <h2 id="hostingTitle" class="h4 mb-3"><i class="bi bi-house-door"></i> Sede y Contacto</h2>
+                <p>Encuentra nuestras sucursales y puntos de atención en todo el país. Estamos disponibles para asistirte en nuestras oficinas o a través de nuestra línea de atención al cliente.</p>
+                <p><a class="btn btn-outline-dark" href="/contact"><i class="bi bi-telephone"></i> Contáctanos &raquo;</a></p>
+            </div>
         </section>
     </div>
 
@@ -38,3 +126,7 @@
         <p>Visita nuestra <a href="/about">página de información</a> para conocer más sobre nuestro compromiso con la excelencia y la satisfacción del cliente.</p>
     </footer>
 </main>
+
+<!-- Agrega los enlaces a los archivos de Bootstrap CSS y Bootstrap Icons en el <head> -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">

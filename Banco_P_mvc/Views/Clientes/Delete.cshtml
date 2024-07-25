@@ -6,13 +6,13 @@
 
 <h2>Delete</h2>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3 class="text-danger">Estas seguro de eliminar este cliente?</h3>
 <div>
     <h4>Cliente</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Empleado.DNI_Emp)
+           DNI
         </dt>
 
         <dd>
@@ -20,7 +20,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Nom_Cli)
+            Nombre
         </dt>
 
         <dd>
@@ -28,23 +28,16 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Ape_Pat_Cli)
+            Apellido
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.Ape_Pat_Cli)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Ape_Mat_Cli)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Ape_Mat_Cli)
-        </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Tel_Cli)
+            Celular
         </dt>
 
         <dd>
@@ -52,7 +45,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Cor_cli)
+            Correo
         </dt>
 
         <dd>
@@ -60,7 +53,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Dir_cli)
+            Dirección
         </dt>
 
         <dd>
@@ -68,7 +61,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Dis_cli)
+            Distrito
         </dt>
 
         <dd>
@@ -76,7 +69,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Fec_Ing_Cli)
+            Fec Ingreso
         </dt>
 
         <dd>
@@ -84,7 +77,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Fec_Nac_Cli)
+            Fec Nacimiento
         </dt>
 
         <dd>
@@ -97,7 +90,7 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
+            <input type="submit" value="Delete" class="btn btn-defaultb bg-danger" /> |
             @Html.ActionLink("Back to List", "Index")
         </div>
     }

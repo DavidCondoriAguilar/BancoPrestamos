@@ -50,6 +50,14 @@ namespace Banco_P_mvc.Controllers
         {
             if (ModelState.IsValid)
             {
+                // Verificar si el código de sucursal ya existe
+                var existingSucursal = db.Sucursales.Find(sucursal.Cod_Suc);
+                if (existingSucursal != null)
+                {
+                    ModelState.AddModelError("Cod_Suc", "El código de sucursal ya existe. Por favor, elige otro.");
+                    return View(sucursal);
+                }
+
                 db.Sucursales.Add(sucursal);
                 db.SaveChanges();
                 return RedirectToAction("Index");

@@ -6,9 +6,6 @@
 }
 
 <div class="container">
-
-
-
     <div class="row justify-content-center align-items-center min-vh-100">
         <!-- Columna con íconos y título -->
         <div class="col-md-6 d-flex flex-column justify-content-center text-center bg-light py-5 px-4 rounded">
@@ -33,29 +30,62 @@
                     <h2 class="text-center text-primary mb-4">Login</h2>
 
                     <div class="form-group mb-3">
-                        @Html.LabelFor(model => model.UsuarioEmpleado, new { @class = "form-label" })
-                        <div class="input-group">
-                            <span class="input-group-text"><i class="bi bi-person"></i></span>
-                            @Html.TextBoxFor(model => model.UsuarioEmpleado, new { @class = "form-control" })
+                        @Html.TextBoxFor(model => model.UsuarioEmpleado, new { @class = "form-control form-control-lg", placeholder = "Username" })
+                        <div class="form-text">
+                            <i class="bi bi-person text-primary"></i>
                         </div>
                         @Html.ValidationMessageFor(model => model.UsuarioEmpleado, "", new { @class = "text-danger" })
                     </div>
 
-                    <div class="form-group mb-3">
-                        @Html.LabelFor(model => model.ClaveEmpleado, new { @class = "form-label" })
-                        <div class="input-group">
-                            <span class="input-group-text"><i class="bi bi-lock"></i></span>
-                            @Html.PasswordFor(model => model.ClaveEmpleado, new { @class = "form-control" })
+                    <div class="form-group mb-3 position-relative">
+                        @Html.PasswordFor(model => model.ClaveEmpleado, new { @class = "form-control form-control-lg", placeholder = "Password", id = "password" })
+                        <div class="form-text position-relative">
+                            <i class="bi bi-lock text-primary"></i>
+                            <i class="bi bi-eye position-absolute top-50 end-0 translate-middle-y cursor-pointer" id="togglePassword"></i>
                         </div>
                         @Html.ValidationMessageFor(model => model.ClaveEmpleado, "", new { @class = "text-danger" })
                     </div>
 
                     <div class="form-group text-center">
-                        <input type="submit" value="Login" class="btn btn-primary" />
+                        <button type="submit" class="btn btn-primary btn-lg">Login</button>
                     </div>
                 </div>
             }
         </div>
-
     </div>
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var togglePassword = document.getElementById('togglePassword');
+        var passwordInput = document.getElementById('password');
+
+        togglePassword.addEventListener('click', function () {
+            // Toggle password visibility
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                togglePassword.classList.remove('bi-eye');
+                togglePassword.classList.add('bi-eye-slash');
+            } else {
+                passwordInput.type = 'password';
+                togglePassword.classList.remove('bi-eye-slash');
+                togglePassword.classList.add('bi-eye');
+            }
+        });
+    });
+</script>
+
+<style>
+    .form-text {
+        position: relative;
+    }
+
+        .form-text .bi {
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .form-text .bi-eye-slash {
+            color: #007bff; /* Adjust color to match your theme */
+        }
+</style>

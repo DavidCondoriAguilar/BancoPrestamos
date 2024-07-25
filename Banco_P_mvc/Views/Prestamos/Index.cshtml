@@ -4,48 +4,37 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Lista de Préstamos</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink(" Crear Nuevo", "Create", null, new { @class = "btn btn-primary btn-sm bi bi-plus" })
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Sucursal.Nom_Suc)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Mon_Pre)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Pre_Est)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Com_Deu)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Sucursal.Nom_Suc)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Mon_Pre)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Pre_Est)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Com_Deu)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Cod_Pre }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Cod_Pre }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Cod_Pre })
-        </td>
-    </tr>
-}
-
-</table>
+<div class="table-responsive">
+    <table class="table table-striped table-bordered table-sm">
+        <thead class="thead-dark">
+            <tr>
+                <th>Nombre Sucursal</th>
+                <th>Monto Préstamo</th>
+                <th>Estado Préstamo</th>
+                <th>Comentario Deuda</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.Sucursal.Nom_Suc)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Mon_Pre)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Pre_Est)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Com_Deu)</td>
+                    <td>
+                        @Html.ActionLink(" Editar", "Edit", new { id = item.Cod_Pre }, new { @class = "btn btn-secondary btn-sm bi bi-pencil-square" })
+                        @Html.ActionLink(" Detalles", "Details", new { id = item.Cod_Pre }, new { @class = "btn btn-info btn-sm bi bi-info-circle" })
+                        @Html.ActionLink(" Eliminar", "Delete", new { id = item.Cod_Pre }, new { @class = "btn btn-danger btn-sm bi bi-trash" })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
